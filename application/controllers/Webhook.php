@@ -76,8 +76,8 @@ class Webhook extends CI_Controller {
       $profile = $res->getJSONDecodedBody();
 
       // create welcome message
-      $message  = "Salam kenal, " . $profile['displayName'] . "!\n";
-      $message .= "Silakan kirim pesan \"MULAI\" untuk memulai kuis.";
+      $message  = "Halo, " . $profile['displayName'] . "! Terima Kasih Telah Menambahkan Kuis Line Bot dari Yafie Ini.\n";
+      $message .= "Kuis ini merupakan kuis seputar Bahasa PHP. Silakan kirim pesan \"MULAI\" untuk memulai kuis.";
       $textMessageBuilder = new TextMessageBuilder($message);
 
       // create sticker message
@@ -183,8 +183,8 @@ class Webhook extends CI_Controller {
 
       // create play again message
       $message = ($this->user['score'] < 8) ?
-'Wkwkwk! Nyerah? Ketik "MULAI" untuk bermain lagi!':
-'Great! Mantap bro! Ketik "MULAI" untuk bermain lagi!';
+'HAHAHAHA! Sepertinya Harus Belajar Lebih Baik Lagi Yaa! Ketik "MULAI" untuk bermain lagi!':
+'Great! Mantap! Kamu berhasil mendapatkan nilai sempurna nih. Ketik "MULAI" untuk bermain lagi!';
       $textMessageBuilder2 = new TextMessageBuilder($message);
 
       // merge all message
